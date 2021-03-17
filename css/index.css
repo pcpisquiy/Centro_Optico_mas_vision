@@ -18,7 +18,6 @@ body{
 .color_nav_scroll{
     background:  rgba(32, 161, 212, 0.753)!important;
     transition: all 1s ease;
-
 }
 .espaciado{
     padding-top: 57px;
@@ -61,7 +60,7 @@ padding-top: 10px;
 }
 .card-filosofia{
   width: 300px !important;
-  height: 500px !important;
+  height: 100% !important;
 
 }
 blink {
@@ -98,4 +97,30 @@ blink {
 }
 body{
   overflow-x: hidden;
+}
+.card:hover{
+  box-shadow: 10px 0 50px 0  black;
+  transform: scale(1.2);
+}
+.card-body-1{
+  background-color:rgba( 32, 161, 212) ;
+}
+.card-body-2{
+  background-color:#a5c04f;
+}
+.card-body-3{
+  background-color:#c32c31;
+}
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('../img/varios/loader.gif') 50% 50% no-repeat rgb(249,249,249);
+  opacity: .8;
+}
+.valores{
+  list-style-type: none;
 }

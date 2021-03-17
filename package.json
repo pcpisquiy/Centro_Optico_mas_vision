@@ -1,0 +1,35 @@
+{
+  "name": "centro_optico_mas_vision",
+  "version": "1.0.0",
+  "description": "Página web Optica más vision ",
+  "main": "index.html",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcpisquiy/Centro_Optico_mas_vision.git"
+  },
+  "author": "Solsis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pcpisquiy/Centro_Optico_mas_vision/issues"
+  },
+  "homepage": "https://github.com/pcpisquiy/Centro_Optico_mas_vision#readme",
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "lite-server": "^2.6.1",
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@popperjs/core": "^2.9.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "mdb-ui-kit": "^3.3.0"
+  }
+}

@@ -8,212 +8,325 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/mdb-ui-kit/css/mdb.min.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="css/Index.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="node_modules/aos/dist/aos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
-<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <title>Centro Optico +Vision</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/icono.ico">
 
 
 </head>
 
-<nav id="menu" class="navbar navbar-expand-lg navbar-dark color_nav fixed-top borde-nav">
+<body>
+    <nav id="menu" class="navbar navbar-expand-lg navbar-dark color_nav fixed-top borde-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/icono.png" width="30" height="30" alt="" loading="lazy" />
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto px-lg-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fa fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#instalaciones">Instalaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#servicios">Serivicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./Productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-mdb-toggle="modal" data-mdb-target="#Modal_reservaciones">Reservar Cita</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="loader" id="Carga"></div>
+    <div class="modal fade" id="Modal_reservaciones" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><span><img src="img/varios/icono.png" height="40px"
+                                alt=""> RESERVACIONES </span></h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="well form-horizontal" action=" " method="post" id="reservation_form">
+
+                        <center>
+                            <div class="form-group">
+                                <label class=" control-label">Nombre Completo</label>
+                                <div class="inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="first_name" id="first_name" placeholder="Nombre Completo"
+                                            class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+
+                            <div class="form-group">
+                                <label class=" control-label">Apellidos Completos</label>
+                                <div class=" inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="last_name" id="last_name" placeholder="Apellidos Completos"
+                                            class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class=" control-label">Seleccione los Servicios</label>
+                                <div class=" selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                        <select name="service" id="service" class="form-control selectpicker" multiple>
+                                            <option>Odontologia</option>
+                                            <option>Optica</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class=" control-label">Fecha</label>
+                                <div class=" inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="date" id="date" class="form-control" type="date">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Text input-->
+
+                            <div class="form-group">
+                                <label class=" control-label">Hora</label>
+                                <div class="inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input type="time" id="time" class="form-control selectpicker" min="09:00"
+                                            max="19:00">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+
+
+                            <!-- Text input-->
+
+                            <div class="form-group">
+                                <label class=" control-label">Número de Teléfono</label>
+                                <div class="inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i
+                                                class="glyphicon glyphicon-earphone"></i></span>
+                                        <input name="telefono" id="telefono" placeholder="(+502)" class="form-control"
+                                            type="tel">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                        Close
+                    </button>
+                    <input type="reset" id="enviar" value="Enviar Reservacion" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <main class="espaciado" id="inicio">
+        <div class="container-fluid espaciado" id="Productos" data-aos="zoom-in">
+            <section>
+                <marquee behavior="alternate" scrollamount="8">
+                    <h1 class="text-black"><span><img src="./img/icono.png" height="40" alt=""></span> Centro
+                        óptico y odontológico +visión</h1>
+                </marquee>
+                <article>
+                    <header>
+                        <h2 class="text-white text-left titulo_h2_filosofia pl-lg-5">
+                            Nuestros Productos
+                        </h2>
+                    </header>
+                    <center>
+                        <div class="row" id="cards">
+                   
+                        </div>
+                    </center>
+                </article>
+            </section>
+    </main>
+
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <img src="./img/icono.png" width="30" height="30" alt="" loading="lazy" />
-        </a>
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto px-lg-5">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html"><i class="fa fa-home"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#nosotros">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#instalaciones">Instalaciones</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html#servicios">Serivicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="./Productos.html">Productos</a>
-                </li>
-            </ul>
-        </div>
     </div>
-</nav>
-<main class="espaciado" id="inicio">
-    <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-interval="2000">
-                <img src="./img/slider/slider_1.png" class="d-block w-100 img-carrousel" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="./img/slider/slider_2.png" class="d-block w-100 img-carrousel" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="./img/slider/slider_3.png" class="d-block w-100 img-carrousel" alt="...">
-            </div>
-        </div>
-    </div>
-</main>
-<div class="container-fluid">
-    
-</div>
-<div class="container-fluid footer">
+    <div class="container-fluid footer">
 
-    <!-- Footer -->
-    <footer class="page-footer font-small mdb-color pt-3 ">
+        <!-- Footer -->
+        <footer class="page-footer font-small mdb-color pt-3 ">
 
-        <!-- Footer Links -->
-        <div class="container-fluid text-center text-md-left ">
+            <!-- Footer Links -->
+            <div class="container-fluid text-center text-md-left ">
 
-            <!-- Grid row -->
-            <div class="row">
+                <!-- Grid row -->
+                <div class="row">
 
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1 ">
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1 ">
 
-                    <!-- Content -->
-                    <h5 class="font-weight-bold text-uppercase mb-4  text-white">+Visión</h5>
-                    <p>Visitanos y evalua la salud de tus ojos.</p>
-                    <p>Estamos para servirles y recuerda +Visión Economia a la vista.</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1614406125363!6m8!1m7!1sBJpVkt0Ev5RaFQgdi6JuYA!2m2!1d14.84381998998779!2d-91.51664802907433!3f186.27912971308916!4f-6.664194632283838!5f0.7820865974627469" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <!-- Grid column -->
+                        <!-- Content -->
+                        <h5 class="font-weight-bold text-uppercase mb-4  text-white">+Visión</h5>
+                        <p>Visitanos y evalua la salud de tus ojos.</p>
+                        <p>Estamos para servirles y recuerda +Visión Economia a la vista.</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!4v1614406125363!6m8!1m7!1sBJpVkt0Ev5RaFQgdi6JuYA!2m2!1d14.84381998998779!2d-91.51664802907433!3f186.27912971308916!4f-6.664194632283838!5f0.7820865974627469"
+                            width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <!-- Grid column -->
 
-                <hr class="clearfix w-100 d-md-none ">
+                    <hr class="clearfix w-100 d-md-none ">
 
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1 ">
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1 ">
 
-                    <!-- Links -->
-                    <h5 class="font-weight-bold text-uppercase mb-4 text-white">Menu</h5>
+                        <!-- Links -->
+                        <h5 class="font-weight-bold text-uppercase mb-4 text-white">Menu</h5>
 
-                    <ul class="list-unstyled">
-                        <li>
-                            <p>
-                                <a href="#inicio">Inicio</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <a  href="#nosotros">Filosofia</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <a href="#instalaciones">Instalaciones</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <a  href="#servicios">Servicios</a>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <a href="Productos.html">Productos</a>
-                            </p>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none ">
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1 ">
-
-                    <!-- Contact details -->
-                    <h5 class="font-weight-bold text-uppercase mb-4 text-white ">Contactanos</h5>
-
-                    <ul class="list-unstyled ">
-                        <li>
-                            <a target="blank "
-                                href="https://www.google.com/maps/@14.8438265,-91.5166509,3a,37.5y,191.14h,98.09t/data=!3m6!1e1!3m4!1sBJpVkt0Ev5RaFQgdi6JuYA!2e0!7i13312!8i6656?hl=es-419 ">
+                        <ul class="list-unstyled">
+                            <li>
                                 <p>
-                                    <i class="fa fa-home mr-3 "></i> Centro Dermatologico Segundo nivel Cuesta
-                                    Blanca
+                                    <a href="#inicio">Inicio</a>
                                 </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tel:37604627 ">
+                            </li>
+                            <li>
                                 <p>
-                                    <i class="fa fa-mobile mr-3 "></i> +502 37604627
+                                    <a href="#nosotros">Filosofia</a>
                                 </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tel:77610605 ">
+                            </li>
+                            <li>
                                 <p>
-                                    <i class="fa fa-phone mr-3 "></i> +502 77610605
+                                    <a href="#instalaciones">Instalaciones</a>
                                 </p>
-                            </a>
-                        </li>
-                        
-                    </ul>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="#servicios">Servicios</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <a href="Productos.html">Productos</a>
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none ">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1 ">
+
+                        <!-- Contact details -->
+                        <h5 class="font-weight-bold text-uppercase mb-4 text-white ">Contactanos</h5>
+
+                        <ul class="list-unstyled ">
+                            <li>
+                                <a target="blank "
+                                    href="https://www.google.com/maps/@14.8438265,-91.5166509,3a,37.5y,191.14h,98.09t/data=!3m6!1e1!3m4!1sBJpVkt0Ev5RaFQgdi6JuYA!2e0!7i13312!8i6656?hl=es-419 ">
+                                    <p>
+                                        <i class="fa fa-home mr-3 "></i> Centro Dermatologico Segundo nivel Cuesta
+                                        Blanca
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:37604627 ">
+                                    <p>
+                                        <i class="fa fa-mobile mr-3 "></i> +502 37604627
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:77610605 ">
+                                    <p>
+                                        <i class="fa fa-phone mr-3 "></i> +502 77610605
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none ">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 text-center mx-auto my-4 ">
+
+                        <!-- Social buttons -->
+                        <h5 class="font-weight-bold text-uppercase mb-4 text-white ">Siguenos</h5>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/Centro-%C3%93ptico-Y-Odontol%C3%B3gico-Visi%C3%B3n-1611043548915499/ "
+                            target="blank " class="btn-floating btn-fb " style="font-size:30px; ">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <br>
+                        <!-- maill -->
+                        <a href="mailto:vision.mas.optica.odontologia@gmail.com" class="btn-floating btn-tw ">
+                            <i class="fa fa-envelope " style="font-size:30px; "></i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
 
                 </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none ">
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 text-center mx-auto my-4 ">
-
-                    <!-- Social buttons -->
-                    <h5 class="font-weight-bold text-uppercase mb-4 text-white ">Siguenos</h5>
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/Centro-%C3%93ptico-Y-Odontol%C3%B3gico-Visi%C3%B3n-1611043548915499/ "
-                        target="blank " class="btn-floating btn-fb " style="font-size:30px; ">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                    <br>
-                    <!-- maill -->
-                    <a href="mailto:vision.mas.optica.odontologia@gmail.com" class="btn-floating btn-tw ">
-                        <i class="fa fa-envelope " style="font-size:30px; "></i>
-                    </a>
-
-                </div>
-                <!-- Grid column -->
+                <!-- Grid row -->
 
             </div>
-            <!-- Grid row -->
+            <!-- Footer Links -->
 
-        </div>
-        <!-- Footer Links -->
 
-        
+            <!-- Copyright -->
+
+        </footer>
         <!-- Copyright -->
-       
-    </footer>
-<!-- Copyright -->
 
-</div>
-<div class=" container-fluid footer-copyright text-center py-3 copyright">© 2020 Copyright:
-    <span> <a href="http://solsis.ga" target="blank"><img src="http://solsis.ga/img/solsis.png"  height="50" alt=""></span>  oluciones con sistemas</a>
- </div>
-<!-- Scripts -->
+    </div>
+    <div class=" container-fluid footer-copyright text-center py-3 copyright">©<span id="año"></span> Copyright:
+        <span> <a href="http://solsis.ga" target="blank"><img src="http://solsis.ga/img/solsis.png" height="50"
+                    alt=""></span> oluciones con sistemas</a>
+    </div>
+    <!-- Scripts -->
 
-<script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="./node_modules/jquery/dist/jquery.min.js"></script>
-<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./node_modules//@popperjs/core/lib/popper.js"></script>
-<script src="./node_modules/mdb-ui-kit/js/mdb.min.js"></script>
-<script src="./js/index.js"></script>
-<script src="./node_modules/aos/dist/aos.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules//@popperjs/core/lib/popper.js"></script>
+    <script src="./node_modules/mdb-ui-kit/js/mdb.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./node_modules/aos/dist/aos.js"></script>
 </body>
 
 </html>
